@@ -1,0 +1,31 @@
+---
+import Button from './Button.astro';
+
+export interface Props {
+	text: string;
+}
+const { text } = Astro.props;
+---
+
+<div>
+	<hr />
+
+	<Button
+		style={{
+			transform: 'translateY(-70%)',
+			alignSelf: 'center',
+			textDecoration: 'none',
+		}}
+		type="fill"
+		text="More News"
+		link="#"
+	/>
+</div>
+<style lang="scss">
+	div {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+	}
+</style>

@@ -1,0 +1,54 @@
+---
+export interface Props {
+	text: string;
+	link?: string;
+	type?: string;
+	style?: object;
+}
+const { link, text, type = 'fill', style } = Astro.props;
+---
+
+{
+	link ? (
+		<a href={link} class={`btn--${type}`} style={style}>
+			{text}
+		</a>
+	) : (
+		<button style={style} class={`btn--${type}`}>
+			{text}
+		</button>
+	)
+}
+<style lang="scss">
+	%btn {
+		display: block;
+		padding: 2rem 1rem;
+		font-size: 1.2em;
+		text-transform: uppercase;
+		font-weight: 500;
+		transition: background-color 0.3s ease, color 0.3s ease;
+		cursor: pointer;
+	}
+	.btn--fill {
+		@extend %btn;
+		background-color: var(--color-blue);
+		color: black;
+		border: 2px solid var(--color-blue);
+		&:hover {
+			background-color: transparent;
+			color: var(--color-blue);
+		}
+	}
+	.btn--outline {
+		@extend %btn;
+		border: 2px solid var(--color-blue);
+		background-color: transparent;
+		color: var(--color-blue);
+		transition: border-color 0.3s ease;
+		&:hover {
+			border-color: transparent;
+			background-color: var(--color-blue);
+			color: black;
+		}
+	}
+</style>

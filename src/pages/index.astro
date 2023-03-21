@@ -1,0 +1,72 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import FeaturedCard from '../components/article-cards/FeaturedCard.astro';
+import VerticalCard from '../components/article-cards/VerticalCard.astro';
+import HorizontalCard from '../components/article-cards/HorizontalCard.astro';
+import PopularArticles from '../components/PopularArticles.astro';
+import FullWidthButton from '../components/Buttons/FullWidthButton.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header title={SITE_TITLE} />
+
+		<main>
+			<div class="container">
+				<section class="featured">
+					<FeaturedCard title="The Choctaw Nation" />
+				</section>
+				<section class="vertical-cards">
+					<div class="row">
+						<div class="col-6">
+							<VerticalCard title="Article Title" />
+						</div>
+						<div class="col-6">
+							<VerticalCard title="Article #2 Title" />
+						</div>
+					</div>
+				</section>
+				<section class="horizontal-cards">
+					<div class="row">
+						<div class="col-8">
+							<HorizontalCard title="Article Title" />
+							<HorizontalCard title="Article #2 Title" />
+							<HorizontalCard title="Article #3 Title" />
+						</div>
+						<div class="col-4">
+							<PopularArticles />
+						</div>
+					</div>
+				</section>
+				<section class="vertical-cards">
+					<div class="row">
+						<div class="col-6">
+							<VerticalCard title="Article Title" />
+						</div>
+						<div class="col-6">
+							<VerticalCard title="Article #2 Title" />
+						</div>
+					</div>
+				</section>
+				<section class="horizontal-cards">
+					<HorizontalCard title="Article Title" />
+					<HorizontalCard title="Article Title" />
+					<HorizontalCard title="Article Title" />
+					<HorizontalCard title="Article Title" />
+					<HorizontalCard title="Article Title" />
+					<HorizontalCard title="Article Title" />
+				</section>
+				<FullWidthButton text="More News" />
+			</div>
+		</main>
+
+		<Footer />
+	</body>
+</html>

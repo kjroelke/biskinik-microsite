@@ -1,0 +1,54 @@
+@use './abstracts' as v;
+@import url(https://use.typekit.net/jky5sek.css);
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	margin: 0 auto;
+	background-color: #fff;
+}
+.container {
+	max-width: 1200px;
+	width: 88%;
+}
+section {
+	padding: 6.5rem 0;
+}
+/* TYPOGRAPHY */
+body {
+	font-family: v.$font-body;
+	font-size: 1.6rem;
+	text-align: left;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	line-height: 1.5;
+	color: #444;
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@extend %heading;
+	}
+	h1 {
+		font-size: 4em;
+	}
+	h2 {
+		font-size: 3em;
+	}
+}
+
+%heading {
+	font-family: v.$font-headings;
+	font-weight: 700;
+	font-size: 2em;
+	text-transform: uppercase;
+}

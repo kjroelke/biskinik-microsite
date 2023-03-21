@@ -1,0 +1,94 @@
+---
+const articles = [
+	{
+		title: 'Article Title',
+		excerpt: 'This is the excerpt for a really great article!',
+		link: '#',
+	},
+	{
+		title: 'Article Title',
+		excerpt: 'This is the excerpt for a really great article!',
+		link: '#',
+	},
+	{
+		title: 'Article Title',
+		excerpt: 'This is the excerpt for a really great article!',
+		link: '#',
+	},
+	{
+		title: 'Article Title',
+		excerpt: 'This is the excerpt for a really great article!',
+		link: '#',
+	},
+	{
+		title: 'Article Title',
+		excerpt: 'This is the excerpt for a really great article!',
+		link: '#',
+	},
+	{
+		title: 'Article Title',
+		excerpt: 'This is the excerpt for a really great article!',
+		link: '#',
+	},
+	{
+		title: 'Article Title',
+		excerpt: 'This is the excerpt for a really great article!',
+		link: '#',
+	},
+	{
+		title: 'Article Title',
+		excerpt: 'This is the excerpt for a really great article!',
+		link: '#',
+	},
+	{
+		title: 'Article Title',
+		excerpt: 'This is the excerpt for a really great article!',
+		link: '#',
+	},
+	{
+		title: 'Article Title',
+		excerpt: 'This is the excerpt for a really great article!',
+		link: '#',
+	},
+];
+---
+
+<aside class="popular-articles">
+	<ul>
+		{
+			articles.map(({ link, title, excerpt }) => (
+				<li class="popular-article">
+					<a href={link}>
+						<article>
+							<span class="popular-article__title">{title}</span>{' '}
+							&mdash; {excerpt}
+						</article>
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</aside>
+<style lang="scss">
+	.popular-articles {
+		background-color: var(--color-blue--light);
+		padding: 2rem 3rem;
+		ul {
+			list-style: none;
+			margin: 0 auto;
+			padding: 0;
+			display: block;
+		}
+	}
+	.popular-article {
+		margin-bottom: 1.5rem;
+		a {
+			text-decoration: none;
+			font-weight: 500;
+			color: black;
+		}
+		&__title {
+			font-weight: 700;
+		}
+	}
+</style>

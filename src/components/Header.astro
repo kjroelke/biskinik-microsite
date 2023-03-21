@@ -1,0 +1,94 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<header>
+	<div class="row">
+		<div class="col-6">
+			<HeaderLink href="/">
+				<figure>
+					<img src="/Biskinik_Logo_Full.svg" alt="" />
+					<h1 style="display:none">
+						{SITE_TITLE}
+					</h1>
+				</figure>
+			</HeaderLink>
+		</div>
+		<div class="col-6">
+			<nav class="top-nav">
+				<li><HeaderLink href="#">Latest Issue</HeaderLink></li>
+				<li><HeaderLink href="#">PDF Version</HeaderLink></li>
+				<li><HeaderLink href="#">Subscribe</HeaderLink></li>
+				<li>
+					<HeaderLink href="https://www.choctawnation.com">
+						Choctaw Nation
+					</HeaderLink>
+				</li>
+			</nav>
+		</div>
+	</div>
+</header>
+<nav class="main-nav">
+	<div class="container">
+		<HeaderLink href="/news">News</HeaderLink>
+		<HeaderLink href="/leadership">Leadership Speaks</HeaderLink>
+		<HeaderLink href="/obituaries">Obituaries</HeaderLink>
+		<HeaderLink href="/people-you-know">People You Know</HeaderLink>
+		<HeaderLink href="/iti-fabvssa">Iti Fabvssa</HeaderLink>
+		<HeaderLink href="/archives">Past Issues</HeaderLink>
+	</div>
+</nav>
+<style lang="scss">
+	header {
+		position: relative;
+		img {
+			max-width: 30rem;
+		}
+		.row {
+			.col-6 {
+				padding: 4rem;
+				display: flex;
+				&:first-child {
+					align-items: center;
+				}
+				&:last-child {
+					justify-content: flex-end;
+				}
+			}
+		}
+	}
+	.main-nav {
+		background-color: var(--color-blue);
+		padding: 2rem 1rem;
+		margin-bottom: 3rem;
+		.container {
+			display: flex;
+			justify-content: space-evenly;
+		}
+		a {
+			color: white;
+			font-family: var(--font-headings);
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: 1.2em;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	.top-nav {
+		list-style: none;
+		display: inline-flex;
+		a {
+			margin-left: 1rem;
+			color: var(--color-blue);
+			font-weight: 700;
+			font-size: 1.1em;
+			transition: color 0.2s ease;
+			&:hover {
+				color: var(--color-blue--dark);
+			}
+		}
+	}
+</style>

@@ -1,0 +1,15 @@
+@use 'bootstrap';
+@use './abstracts' as v;
+@use './base';
+
+:root {
+	--font-headings: #{v.$font-headings};
+	--font-body: #{v.$font-body};
+	--font-serif: #{v.$font-serif};
+	--color-blue: #{v.$color-blue};
+	--color-blue--light: #{v.$color-blue--light};
+	--color-blue--dark: #{v.$color-blue--dark};
+	--color-darkblue: #{v.$color-darkblue};
+	--color-darkblue--light: #{v.$color-darkblue--light};
+	--color--off-white: #{v.$color-off-white};
+}
